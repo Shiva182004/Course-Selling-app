@@ -9,4 +9,10 @@ app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/course", courseRouter);
 
-app.listen(3000);
+
+async function main() {
+    await mongoose.connect("mongodb+srv://shivasharmarag:aDsZyizhYtzCeW28@cluster1.sg6th.mongodb.net/coursera-app");
+    app.listen(3000);
+}
+
+main();
