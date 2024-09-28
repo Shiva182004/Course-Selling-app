@@ -1,17 +1,11 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const { userRouter } = require("./routes/user");
+const { courseRouter } = require("./routes/course");
 
 const app = express();
 
-app.post("/login", function(req, res) {
+app.use("/user", userRouter);
+app.use("/course", courseRouter);
 
-});
-
-app.signup("/signup", function(req, res) {
-
-});
-
-app.post("/login", function(req, res) {
-
-});
+app.listen(3000);
